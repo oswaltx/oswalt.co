@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Galerie</title>
+  <style>
+    /* Allgemeine Stile */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .tile {
+      width: calc(33.33% - 10px);
+      height: calc(20% - 10px);
+      margin: 5px;
+      position: relative;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+    
+    .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease-in-out;
+      filter: brightness(70%);
+    }
+    
+    .tile:hover img {
+      filter: brightness(100%);
+    }
+    
+    /* JavaScript-Stile */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <div class="tile">
+      <img src="https://picsum.photos/id/237/800/800" alt="Foto 1" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/238/800/800" alt="Foto 2" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/239/800/800" alt="Foto 3" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/240/800/800" alt="Foto 4" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/241/800/800" alt="Foto 5" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/242/800/800" alt="Foto 6" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/243/800/800" alt="Foto 7" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/244/800/800" alt="Foto 8" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/265/800/800" alt="Foto 9" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/266/800/800" alt="Foto 10" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/247/800/800" alt="Foto 11" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/248/800/800" alt="Foto 12" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/249/800/800" alt="Foto 13" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/250/800/800" alt="Foto 14" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/251/800/800" alt="Foto 15" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/252/800/800" alt="Foto 16" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/253/800/800" alt="Foto 17" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/254/800/800" alt="Foto 18" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/255/800/800" alt="Foto 19" />
+    </div>
+    <div class="tile">
+        <img src="https://picsum.photos/id/256/800/800" alt="Foto 20" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/257/800/800" alt="Foto 21" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/258/800/800" alt="Foto 22" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/259/800/800" alt="Foto 23" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/260/800/800" alt="Foto 24" />
+    </div>
+    <div class="tile">
+      <img src="https://picsum.photos/id/261/800/800" alt="Foto 25" />
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    window.addEventListener('load', () => {
+      const images = document.querySelectorAll('.tile img');
+      const numVisibleImages = 15;
+      let currentImageIndex = Math.floor(Math.random() * (images.length - numVisibleImages)) + numVisibleImages;
+  
+      // Verstecke alle Bilder, außer den ersten 15
+      images.forEach((image, index) => {
+        if (index >= numVisibleImages) {
+          image.classList.add('hidden');
+        }
+      });
+  
+      setInterval(() => {
+        let nextImageIndex;
+  
+        do {
+          // Wähle ein zufälliges Bild aus, das nicht bereits sichtbar ist
+          nextImageIndex = Math.floor(Math.random() * (images.length - numVisibleImages)) + numVisibleImages;
+        } while (nextImageIndex === currentImageIndex);
+  
+        // Setze die Opazität des aktuellen Bildes auf 0
+        images[currentImageIndex].style.opacity = 0;
+  
+        setTimeout(() => {
+          // Zeige das nächste Bild an und setze die Opazität auf 1
+          images[nextImageIndex].classList.remove('hidden');
+          images[nextImageIndex].style.opacity = 1;
+  
+          // Verstecke das vorherige Bild
+          images[currentImageIndex].classList.add('hidden');
+  
+          currentImageIndex = nextImageIndex;
+        }, 500); // Die Dauer der Transition
+  
+      }, 3000); // Die Dauer zwischen den Bildwechseln in Millisekunden
+    });
+  </script>
+  
+  
+  
+</body>
+</html>
+

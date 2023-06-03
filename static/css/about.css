@@ -1,0 +1,47 @@
+.title_container{
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    justify-content: center;
+    display: flex;
+}
+
+.title_container h1{
+    font-size: 100px;
+}
+
+.about_container{
+    display: flex;
+    height: 400px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 40%;
+}
+
+.about_container{
+    font-size: 300%;
+}
+
+.text_item{
+    padding-left: 5%;
+}
+
+
+.about_container img{
+    height: 400px;
+    width: 266.6px;
+    border-radius: 10px;
+}
+
+.about_container h1{
+    float: left;
+    display: flex;
+    font-size: 100px;
+}
+
+.about_container a{
+    text-decoration: none;
+}
+
+
+

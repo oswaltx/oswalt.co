@@ -1,0 +1,37 @@
+html, body{
+    height: 100%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.title_container{
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    justify-content: center;
+    display: flex;
+}
+
+.title_container h1{
+    font-size: 100px;
+}
+
+.image_container{
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+
+.image_container img{
+    height: 300px;
+    opacity: 100%;
+    opacity: 69%;
+    padding: 10px;
+    transition: all 1s;
+}
+
+.image_container img:hover{
+    height: 400px;
+    opacity: 100%;
+    transition: all 0.5s;
+}

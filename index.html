@@ -1,9 +1,27 @@
-<header>
-    <img href="media/img/test_img.jpg">
-</header>
+<!DOCTYPE html>
 <head>
-    <meta name="Oswalts own homepage" content="Click on the website to see it before it's done being developed">
-    <meta property="og:image" content="https://www.oswalt.co/media/img/test_img.jpg"/>
+    <base href=".">
+<title>Home</title>
+<link rel="stylesheet" href="static/css/main.css">
+<link rel="stylesheet" href="static/css/selection.css">
 </head>
-<h1>Hello World</h1>
-<p>I'm writing this from VS Code :)</p>
+<body>
+    <div class="container">
+        <div class="hello_text">
+            <p class="german" id="german">Hallo.</p>
+            <p class="english" id="english">Hello.</p>
+            <p class="spanish" id="spanish">Hola.</p>
+        </div>
+
+        <div class="lang">
+            <a href= "selection.html?lang=de" id="lang_de">DE</a>
+            <p>|</p>
+            <a href= "selection.html?lang=en" id="lang_en">EN</a>
+            <p>|</p>
+            <a href= "selection.html?lang=es" id="lang_en">ES</a>
+            
+        </div>
+    </div>
+    <script defer src="static/js/main.js"></script> 
+    <script src="static/js/hello_animation.js"></script>
+</body>
